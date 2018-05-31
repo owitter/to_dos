@@ -15,7 +15,13 @@
 
       <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.course.user_id %></td>
+        <td>
+          <% if assignment.course.present? %>
+            <a href="/courses/<%= assignment.course.id %>">
+              <%= assignment.course.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/assignments/<%= assignment.id %>" class="btn btn-primary">Show</a>
           <a href="/assignments/<%= assignment.id %>/edit" class="btn btn-warning">Edit</a>

@@ -16,7 +16,13 @@
 
       <% @courses.each do |course| %>
       <tr>
-        <td><%= course.user.email %></td>
+        <td>
+          <% if course.user.present? %>
+            <a href="/users/<%= course.user.id %>">
+              <%= course.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= course.assignment_id %></td>
         <td>
           <a href="/courses/<%= course.id %>" class="btn btn-primary">Show</a>
