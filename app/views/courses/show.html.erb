@@ -56,6 +56,20 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_assignment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for course_id -->
+      <input type="hidden" name="course_id" value="<%= @course.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Assignment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
