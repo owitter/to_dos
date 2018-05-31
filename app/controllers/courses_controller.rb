@@ -10,7 +10,8 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = current_user.courses.page(params[:page]).per(10)
+    @q = current_user.courses.ransack(params[:q])
+    @courses = @q.result(:distinct => true).includes(:user, :assignments).page(params[:page]).per(10)
 
     render("courses/index.html.erb")
   end
