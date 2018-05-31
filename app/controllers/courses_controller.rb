@@ -47,8 +47,6 @@ class CoursesController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
-
-    @course.user_id = params[:user_id]
     @course.assignment_id = params[:assignment_id]
 
     save_status = @course.save
