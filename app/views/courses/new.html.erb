@@ -30,6 +30,15 @@
         <input type="text" id="assignment_id" name="assignment_id" placeholder="Assignment" class="form-control" value="<%= @course.assignment_id %>">
       </div>
 
+      <!-- Label and input for course_name -->
+      <div class="form-group">
+        <label for="course_name" class="control-label">
+          Course name
+        </label>
+
+        <input type="text" id="course_name" name="course_name" placeholder="Course name" class="form-control" value="<%= @course.course_name %>">
+      </div>
+
       <button class="btn btn-success">
         Create Course
       </button>

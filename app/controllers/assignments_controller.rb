@@ -22,6 +22,9 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new
 
     @assignment.course_id = params[:course_id]
+    @assignment.description = params[:description]
+    @assignment.due_date = params[:due_date]
+    @assignment.assignment_name = params[:assignment_name]
 
     save_status = @assignment.save
 
@@ -49,6 +52,9 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
 
     @assignment.course_id = params[:course_id]
+    @assignment.description = params[:description]
+    @assignment.due_date = params[:due_date]
+    @assignment.assignment_name = params[:assignment_name]
 
     save_status = @assignment.save
 

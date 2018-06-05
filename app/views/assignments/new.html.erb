@@ -27,6 +27,33 @@
         <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :user_id, @assignment.course_id), :class => "form-control") %>
       </div>
 
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @assignment.description %></textarea>
+      </div>
+
+      <!-- Label and input for due_date -->
+      <div class="form-group">
+        <label for="due_date" class="control-label">
+          Due date
+        </label>
+
+        <input type="text" id="due_date" name="due_date" placeholder="Due date" class="form-control" value="<%= @assignment.due_date %>">
+      </div>
+
+      <!-- Label and input for assignment_name -->
+      <div class="form-group">
+        <label for="assignment_name" class="control-label">
+          Assignment name
+        </label>
+
+        <input type="text" id="assignment_name" name="assignment_name" placeholder="Assignment name" class="form-control" value="<%= @assignment.assignment_name %>">
+      </div>
+
       <button class="btn btn-success">
         Create Assignment
       </button>

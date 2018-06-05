@@ -1,6 +1,6 @@
 ActiveAdmin.register Assignment do
 
- permit_params :course_id
+ permit_params :course_id, :description, :due_date, :assignment_name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
